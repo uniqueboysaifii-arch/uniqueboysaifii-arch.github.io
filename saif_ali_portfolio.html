@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Saif Ali — Web Developer, Designer, Poet & Creative</title>
+<meta name="description" content="Saif Ali — Full-stack developer, AI engineer, graphic designer, content writer and poet based in Rawalpindi, Pakistan. Available for hire at $50/hour." />
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.5.0/dist/tabler-icons.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a84c;--gold-light:#e2c47a;--gold-dim:#7a6030;--dark:#080808;--dark2:#0f0f0f;--dark3:#161616;--text:#e8e8e8;--muted:#777}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:#000}
+
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2.5rem;border-bottom:1px solid #c9a84c18;background:rgba(8,8,8,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:padding .4s ease,background .4s ease}
+.topbar.scrolled{padding:.8rem 2.5rem;background:rgba(8,8,8,.92)}
+.logo{cursor:pointer;transition:transform .4s ease,text-shadow .4s ease;display:flex;align-items:center}
+.logo:hover{transform:translateY(-1px);filter:drop-shadow(0 0 6px #c9a84c66)}
+.logo img{max-height:40px;width:auto;display:block;transition:filter .3s}
+.nav{display:flex;gap:2rem}
+.nav a{position:relative;color:var(--muted);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:color .3s ease}
+.nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.65,.05,.36,1)}
+.nav a:hover{color:var(--gold)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.avail{display:flex;align-items:center;gap:7px;font-size:11px;color:#5a9f6a;letter-spacing:1px;text-transform:uppercase}
+.dot{width:7px;height:7px;border-radius:50%;background:#5a9f6a;animation:pulseDot 1.8s ease-out infinite}
+@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 #5a9f6a88}70%{box-shadow:0 0 0 10px #5a9f6a00}}
+
+.hero{position:relative;padding:5rem 2.5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;border-bottom:1px solid #c9a84c10;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-20%;width:60%;height:120%;background:radial-gradient(circle,#c9a84c22,transparent 60%);filter:blur(60px);animation:float 14s ease-in-out infinite;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-50%;left:-10%;width:50%;height:100%;background:radial-gradient(circle,#c9a84c14,transparent 60%);filter:blur(80px);animation:float 18s ease-in-out infinite reverse;pointer-events:none}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
+.hero>*{position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:1.2rem}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;line-height:1;color:#fff;margin-bottom:.4rem;letter-spacing:-1px}
+.hero-name span{color:var(--gold);display:inline-block;transition:transform .5s ease}
+.hero-name:hover span{transform:translateX(8px)}
+.hero-role{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--muted);margin-bottom:1.8rem;font-style:italic}
+.hero-desc{font-size:13px;color:#888;line-height:1.9;max-width:380px;margin-bottom:2rem}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary,.btn-secondary{position:relative;overflow:hidden;padding:13px 30px;font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;font-weight:500;transition:transform .35s cubic-bezier(.65,.05,.36,1),box-shadow .35s ease,color .35s ease;display:inline-flex;align-items:center;gap:6px}
+.btn-primary{background:var(--gold);color:#000;border:none}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 30px -10px #c9a84c88}
+.btn-secondary{background:transparent;color:var(--gold);border:1px solid #c9a84c44}
+.btn-secondary::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(101%);transition:transform .45s cubic-bezier(.65,.05,.36,1);z-index:0}
+.btn-secondary:hover{color:#000;border-color:var(--gold);transform:translateY(-3px)}
+.btn-secondary:hover::before{transform:translateY(0)}
+.btn-secondary>*{position:relative;z-index:1}
+
+.hero-right{display:flex;flex-direction:column;padding-left:2rem;border-left:1px solid #c9a84c18}
+.stat-row{display:flex;align-items:baseline;gap:12px;padding:1.1rem 0;border-bottom:1px solid #c9a84c0e;transition:padding-left .35s ease,border-color .35s ease}
+.stat-row:last-child{border-bottom:none}
+.stat-row:hover{padding-left:12px;border-color:#c9a84c44}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--gold);line-height:1;transition:transform .35s ease}
+.stat-row:hover .stat-n{transform:scale(1.08)}
+.stat-l{font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+
+.divider{height:1px;background:linear-gradient(to right,transparent,#c9a84c33,transparent);margin:0 2.5rem}
+
+.section{padding:4rem 2.5rem}
+.sh{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem}
+.sn{font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold-dim);letter-spacing:2px}
+.st{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;color:#fff}
+.sl{flex:1;height:1px;background:linear-gradient(to right,#c9a84c44,transparent);margin-left:1rem;align-self:center}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.7,.3,1),transform .9s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal.delay-1{transition-delay:.08s}.reveal.delay-2{transition-delay:.16s}.reveal.delay-3{transition-delay:.24s}.reveal.delay-4{transition-delay:.32s}.reveal.delay-5{transition-delay:.40s}.reveal.delay-6{transition-delay:.48s}.reveal.delay-7{transition-delay:.56s}.reveal.delay-8{transition-delay:.64s}
+
+.about-layout{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem}
+.about-text{font-size:14px;color:#888;line-height:2;margin-bottom:1rem}
+.about-highlight{color:var(--gold);font-style:italic;font-family:'Cormorant Garamond',serif;font-size:19px;border-left:2px solid var(--gold);padding-left:1rem;margin:1.5rem 0;line-height:1.5;transition:padding-left .35s ease,border-color .35s ease}
+.about-highlight:hover{padding-left:1.4rem;border-color:var(--gold-light)}
+.info-list{display:flex;flex-direction:column}
+.info-item{display:flex;justify-content:space-between;align-items:flex-start;padding:12px 0;border-bottom:1px solid #c9a84c0d;font-size:12px;gap:8px;transition:padding-left .35s ease}
+.info-item:hover{padding-left:8px}
+.info-item:last-child{border-bottom:none}
+.info-key{color:var(--muted);letter-spacing:1px;text-transform:uppercase;flex-shrink:0}
+.info-val{color:var(--gold-light);text-align:right}
+.pills{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.pill{background:#c9a84c0d;border:1px solid #c9a84c22;color:var(--gold-dim);font-size:10px;padding:3px 9px;letter-spacing:.5px;transition:background .3s,color .3s,transform .3s}
+.pill:hover{background:#c9a84c22;color:var(--gold);transform:translateY(-2px)}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#c9a84c10}
+.svc-card{position:relative;background:var(--dark2);padding:1.8rem 1.5rem;transition:background .4s,transform .4s cubic-bezier(.2,.7,.3,1);overflow:hidden}
+.svc-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#c9a84c1a,transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.svc-card:hover{background:var(--dark3);transform:translateY(-4px)}
+.svc-card:hover::before{opacity:1}
+.svc-card>*{position:relative;z-index:1}
+.svc-icon{font-size:22px;color:var(--gold);margin-bottom:.9rem;transition:transform .45s cubic-bezier(.65,.05,.36,1);display:inline-block}
+.svc-card:hover .svc-icon{transform:rotate(-8deg) scale(1.15)}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:11px;color:var(--gold-dim);letter-spacing:2px;margin-bottom:6px}
+.svc-name{font-size:13px;font-weight:500;color:#e0e0e0;margin-bottom:6px;transition:color .3s}
+.svc-card:hover .svc-name{color:var(--gold-light)}
+.svc-desc{font-size:11px;color:#666;line-height:1.7}
+.svc-new{display:inline-block;background:#c9a84c22;color:var(--gold);font-size:9px;padding:2px 7px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;animation:pulseBadge 2s ease-in-out infinite}
+@keyframes pulseBadge{0%,100%{box-shadow:0 0 0 0 #c9a84c66}50%{box-shadow:0 0 0 6px #c9a84c00}}
+
+.skills-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.sgt{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--gold);margin-bottom:1.4rem;font-style:italic}
+.skill-row{margin-bottom:1.3rem}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:6px;font-size:12px}
+.skill-name-t{color:#aaa}
+.skill-pct-t{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:15px}
+.skill-track{height:2px;background:#1e1e1e;overflow:hidden}
+.skill-bar{height:2px;background:linear-gradient(to right,var(--gold-dim),var(--gold),var(--gold-light));width:0;transition:width 1.6s cubic-bezier(.2,.7,.3,1)}
+.reveal.in .skill-bar{width:var(--w,0%)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem}
+.tag{background:#c9a84c0d;border:1px solid #c9a84c22;color:var(--gold-dim);font-size:11px;padding:5px 14px;letter-spacing:1px;text-transform:uppercase;transition:background .3s,color .3s,transform .3s,border-color .3s}
+.tag:hover{background:#c9a84c22;color:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#c9a84c08}
+.proj-card{background:var(--dark2);padding:2rem;position:relative;overflow:hidden;transition:background .4s,transform .4s}
+.proj-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .5s cubic-bezier(.65,.05,.36,1);transform-origin:left}
+.proj-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:100%;background:linear-gradient(to right,#c9a84c08,transparent);transition:width .6s;pointer-events:none}
+.proj-card:hover{background:var(--dark3);transform:translateY(-4px)}
+.proj-card:hover::before{transform:scaleX(1)}
+.proj-card:hover::after{width:100%}
+.proj-cat{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-dim);margin-bottom:10px}
+.proj-title{font-family:'Cormorant Garamond',serif;font-size:24px;color:#fff;margin-bottom:8px;transition:color .3s,transform .3s}
+.proj-card:hover .proj-title{color:var(--gold-light);transform:translateX(4px)}
+.proj-desc{font-size:12px;color:#666;line-height:1.8;margin-bottom:1.2rem;position:relative;z-index:1}
+.proj-tech{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
+.tech-pill{background:#c9a84c08;border:1px solid #c9a84c1a;color:#7a6030;font-size:10px;padding:3px 10px;transition:all .3s}
+.tech-pill:hover{background:#c9a84c22;color:var(--gold);border-color:var(--gold)}
+
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;border:1px solid #c9a84c15}
+.contact-left{padding:2.5rem;border-right:1px solid #c9a84c12}
+.contact-right{padding:2.5rem}
+.contact-intro{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#fff;line-height:1.3;margin-bottom:2rem}
+.contact-intro span{color:var(--gold);font-style:italic;position:relative}
+.contact-intro span::after{content:'';position:absolute;left:0;bottom:2px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .8s ease}
+.reveal.in .contact-intro span::after{transform:scaleX(1);transition-delay:.6s}
+.c-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:1.2rem;padding-bottom:1.2rem;border-bottom:1px solid #c9a84c0a;transition:padding-left .35s ease}
+.c-item:hover{padding-left:6px}
+.c-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.c-icon{width:36px;height:36px;border:1px solid #c9a84c22;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:15px;flex-shrink:0;transition:background .3s,border-color .3s,transform .4s,color .3s}
+.c-item:hover .c-icon{background:var(--gold);color:#000;border-color:var(--gold);transform:rotate(360deg)}
+.c-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.c-val{font-size:13px;color:#bbb}
+.social-row{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.soc-item{display:flex;align-items:center;gap:8px;font-size:12px;color:#888;cursor:pointer;transition:color .3s,transform .3s}
+.soc-item:hover{color:var(--gold);transform:translateX(4px)}
+.soc-item i{color:var(--gold);font-size:15px}
+.f-input,.f-textarea{width:100%;background:#0f0f0f;border:1px solid #c9a84c15;color:#ccc;padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:13px;outline:none;margin-bottom:12px;transition:border-color .3s,background .3s}
+.f-input:focus,.f-textarea:focus{border-color:var(--gold);background:#131313}
+.f-textarea{resize:none;height:110px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.f-btn{width:100%;background:var(--gold);color:#000;border:none;padding:14px;font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:transform .35s,box-shadow .35s,letter-spacing .35s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.f-btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px #c9a84c88;letter-spacing:3px}
+.rate-badge{display:inline-flex;align-items:baseline;gap:4px;background:#c9a84c12;border:1px solid #c9a84c33;padding:8px 16px;margin-bottom:1.5rem;transition:transform .35s,box-shadow .35s}
+.rate-badge:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px #c9a84c66}
+.rate-num{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);font-weight:300}
+.rate-label{font-size:11px;color:var(--gold-dim);letter-spacing:1px;text-transform:uppercase}
+
+.footer{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 2.5rem;border-top:1px solid #c9a84c10}
+.footer-copy{font-size:11px;color:#444;letter-spacing:1px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--gold-dim)}
+.footer-socials{display:flex;gap:10px}
+.fsoc{width:32px;height:32px;border:1px solid #c9a84c18;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;cursor:pointer;text-decoration:none;transition:color .3s,border-color .3s,transform .35s,background .3s}
+.fsoc:hover{border-color:var(--gold);color:#000;background:var(--gold);transform:translateY(-3px) rotate(-6deg)}
+
+.page-intro>*{animation:rise .9s cubic-bezier(.2,.7,.3,1) both}
+.page-intro>*:nth-child(1){animation-delay:.05s}.page-intro>*:nth-child(2){animation-delay:.15s}.page-intro>*:nth-child(3){animation-delay:.25s}.page-intro>*:nth-child(4){animation-delay:.35s}.page-intro>*:nth-child(5){animation-delay:.45s}.page-intro>*:nth-child(6){animation-delay:.55s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+@media (max-width:900px){
+  .topbar{padding:1rem 1.2rem;flex-wrap:wrap;gap:10px}
+  .nav{display:none}
+  .hero{grid-template-columns:1fr;padding:3rem 1.2rem;gap:2rem}
+  .hero-name{font-size:52px}
+  .hero-right{padding-left:0;border-left:none;border-top:1px solid #c9a84c18;padding-top:1rem}
+  .section{padding:2.5rem 1.2rem}
+  .divider{margin:0 1.2rem}
+  .about-layout,.skills-layout,.contact-layout,.projects-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-left{border-right:none;border-bottom:1px solid #c9a84c12}
+  .footer{flex-direction:column;gap:12px;padding:1.4rem 1.2rem}
+}
+@media (max-width:520px){
+  .services-grid{grid-template-columns:1fr}
+  .hero-name{font-size:44px}
+  .st{font-size:26px}
+}
+</style>
+</head>
+<body>
+
+<h1 style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Saif Ali — Web Developer, Graphic Designer, Poet and Digital Creative based in Rawalpindi, Pakistan</h1>
+
+<div class="topbar" id="topbar">
+  <div class="logo" onclick="scrollToId('top')">
+    <img src="logo.png" alt="Saif Ali logo">
+  </div>
+  <nav class="nav">
+    <a onclick="scrollToId('about')">About</a>
+    <a onclick="scrollToId('services')">Services</a>
+    <a onclick="scrollToId('skills')">Skills</a>
+    <a onclick="scrollToId('projects')">Projects</a>
+    <a onclick="scrollToId('contact')">Contact</a>
+  </nav>
+  <div class="avail"><div class="dot"></div>Available for hire</div>
+</div>
+
+<section id="top" class="hero page-intro">
+  <div>
+    <div class="eyebrow">Full Stack Developer &amp; Creative Professional</div>
+    <h2 class="hero-name">Saif <span>Ali</span></h2>
+    <div class="hero-role">Web · Design · AI · Poetry · Content</div>
+    <p class="hero-desc">I craft complete digital experiences — from intelligent web applications and AI agents to compelling brand identities, captivating content, and soulful poetry. One professional. Infinite possibilities.</p>
+    <div style="margin-bottom:1.8rem"><div class="rate-badge"><span class="rate-num">$50</span><span class="rate-label">/ hour</span></div></div>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="openLink('https://wa.me/923255852658?text=Hi%20Saif!%20I%20visited%20your%20portfolio%20and%20I%27d%20like%20to%20hire%20you.')"><i class="ti ti-brand-whatsapp"></i> Hire Me</button>
+      <button class="btn-secondary" onclick="scrollToId('projects')"><span>View Work</span></button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-row"><div class="stat-n">16+</div><div class="stat-l">Professional Skills</div></div>
+    <div class="stat-row"><div class="stat-n">5</div><div class="stat-l">Languages Spoken</div></div>
+    <div class="stat-row"><div class="stat-n">$50</div><div class="stat-l">Per Hour Rate</div></div>
+    <div class="stat-row"><div class="stat-n">1h</div><div class="stat-l">Average Response Time</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about" class="section">
+  <div class="sh reveal"><span class="sn">01</span><h2 class="st">About Me</h2><div class="sl"></div></div>
+  <div class="about-layout">
+    <div class="reveal delay-1">
+      <p class="about-text">Hi, I'm Saif Ali — a multi-disciplinary digital professional based in Rawalpindi, Pakistan. I bring together technical development, creative design, compelling content, and the art of poetry under one roof.</p>
+      <div class="about-highlight">"I don't just build websites — I build digital identities that leave lasting impressions."</div>
+      <p class="about-text" style="color:#555">Whether you need a high-performance web application, a powerful AI agent, a stunning logo, engaging written content, or a heartfelt tarana for your brand — I deliver with precision, creativity, and dedication.</p>
+    </div>
+    <div class="info-list reveal delay-2">
+      <div class="info-item"><span class="info-key">Location</span><span class="info-val">Rawalpindi, Pakistan</span></div>
+      <div class="info-item"><span class="info-key">Specialty</span><span class="info-val">Full Stack + Design + Poetry</span></div>
+      <div class="info-item"><span class="info-key">Languages</span><div class="pills"><span class="pill">English</span><span class="pill">Urdu</span><span class="pill">Punjabi</span><span class="pill">Pashto</span><span class="pill">Hindko</span></div></div>
+      <div class="info-item"><span class="info-key">Rate</span><span class="info-val" style="color:var(--gold);font-size:16px;font-family:'Cormorant Garamond',serif">$50 / hour</span></div>
+      <div class="info-item"><span class="info-key">Platform</span><span class="info-val">PeoplePerHour</span></div>
+      <div class="info-item"><span class="info-key">Availability</span><span class="info-val">Full Time — Now</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="services" class="section" style="padding-bottom:0">
+  <div class="sh reveal"><span class="sn">02</span><h2 class="st">Services</h2><div class="sl"></div></div>
+</section>
+<div class="services-grid">
+  <div class="svc-card reveal delay-1"><div class="svc-num">01</div><div class="svc-icon"><i class="ti ti-world"></i></div><div class="svc-name">Web Development</div><div class="svc-desc">Responsive, modern websites and full stack web applications built to perform</div></div>
+  <div class="svc-card reveal delay-2"><div class="svc-num">02</div><div class="svc-icon"><i class="ti ti-robot"></i></div><div class="svc-name">AI Agent Development</div><div class="svc-desc">Intelligent Python-powered AI agents and automation solutions</div></div>
+  <div class="svc-card reveal delay-3"><div class="svc-num">03</div><div class="svc-icon"><i class="ti ti-palette"></i></div><div class="svc-name">Graphic &amp; Logo Design</div><div class="svc-desc">Logos, brand identities, social media graphics and print materials</div></div>
+  <div class="svc-card reveal delay-4"><div class="svc-num">04</div><div class="svc-icon"><i class="ti ti-video"></i></div><div class="svc-name">Photo &amp; Video Editing</div><div class="svc-desc">Professional photo retouching and cinematic video production</div></div>
+  <div class="svc-card reveal delay-5"><div class="svc-num">05</div><div class="svc-icon"><i class="ti ti-pencil"></i></div><div class="svc-name">Content &amp; Blog Writing</div><div class="svc-desc">SEO-optimised articles, blogs, scripts and creative copy</div></div>
+  <div class="svc-card reveal delay-6"><div class="svc-num">06</div><div class="svc-icon"><i class="ti ti-language"></i></div><div class="svc-name">FR ↔ EN Translation</div><div class="svc-desc">Accurate, fluent French and English translation for any content</div></div>
+  <div class="svc-card reveal delay-1"><div class="svc-num">07</div><div class="svc-icon"><i class="ti ti-brand-python"></i></div><div class="svc-name">Python Programming</div><div class="svc-desc">Custom scripts, data tools, and automation with Python</div></div>
+  <div class="svc-card reveal delay-2"><div class="svc-num">08</div><div class="svc-icon"><i class="ti ti-players"></i></div><div class="svc-name">Script Writing</div><div class="svc-desc">Engaging video scripts, ad copy and creative screenwriting</div></div>
+  <div class="svc-card reveal delay-3"><div class="svc-new">New</div><div class="svc-num">09</div><div class="svc-icon"><i class="ti ti-music"></i></div><div class="svc-name">Songs, Poetry &amp; Tarana</div><div class="svc-desc">Custom songs, Urdu/Punjabi poetry and corporate taranas for your brand or business</div></div>
+</div>
+
+<section id="skills" class="section">
+  <div class="sh reveal"><span class="sn">03</span><h2 class="st">Skills</h2><div class="sl"></div></div>
+  <div class="skills-layout">
+    <div class="reveal delay-1">
+      <div class="sgt">Development</div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Website Development</span><span class="skill-pct-t">95%</span></div><div class="skill-track"><div class="skill-bar" style="--w:95%"></div></div></div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Full Stack Development</span><span class="skill-pct-t">85%</span></div><div class="skill-track"><div class="skill-bar" style="--w:85%"></div></div></div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">AI Agent Development</span><span class="skill-pct-t">80%</span></div><div class="skill-track"><div class="skill-bar" style="--w:80%"></div></div></div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Python Programming</span><span class="skill-pct-t">85%</span></div><div class="skill-track"><div class="skill-bar" style="--w:85%"></div></div></div>
+      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">React</span></div>
+    </div>
+    <div class="reveal delay-2">
+      <div class="sgt">Design, Content &amp; Arts</div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Graphic &amp; Logo Design</span><span class="skill-pct-t">90%</span></div><div class="skill-track"><div class="skill-bar" style="--w:90%"></div></div></div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Photo &amp; Video Editing</span><span class="skill-pct-t">85%</span></div><div class="skill-track"><div class="skill-bar" style="--w:85%"></div></div></div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Content &amp; Script Writing</span><span class="skill-pct-t">88%</span></div><div class="skill-track"><div class="skill-bar" style="--w:88%"></div></div></div>
+      <div class="skill-row reveal"><div class="skill-top"><span class="skill-name-t">Songs, Poetry &amp; Tarana</span><span class="skill-pct-t">92%</span></div><div class="skill-track"><div class="skill-bar" style="--w:92%"></div></div></div>
+      <div class="tags"><span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">Canva</span><span class="tag">Urdu Poetry</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="projects" class="section" style="padding-bottom:0">
+  <div class="sh reveal"><span class="sn">04</span><h2 class="st">Projects</h2><div class="sl"></div></div>
+</section>
+<div class="projects-grid">
+  <div class="proj-card reveal delay-1"><div class="proj-cat">Web Development</div><div class="proj-title">Business Website</div><div class="proj-desc">A fully responsive, multi-page business website with smooth animations, contact forms and CMS integration.</div><div class="proj-tech"><span class="tech-pill">HTML/CSS</span><span class="tech-pill">JavaScript</span><span class="tech-pill">WordPress</span></div></div>
+  <div class="proj-card reveal delay-2"><div class="proj-cat">AI Development</div><div class="proj-title">AI Customer Agent</div><div class="proj-desc">Python-powered intelligent chatbot for customer support automation, reducing response time by 70%.</div><div class="proj-tech"><span class="tech-pill">Python</span><span class="tech-pill">OpenAI API</span><span class="tech-pill">Flask</span></div></div>
+  <div class="proj-card reveal delay-3"><div class="proj-cat">Brand Identity</div><div class="proj-title">Complete Brand Package</div><div class="proj-desc">Full brand identity including logo suite, color palette, typography system and branded social media templates.</div><div class="proj-tech"><span class="tech-pill">Illustrator</span><span class="tech-pill">Photoshop</span><span class="tech-pill">Canva</span></div></div>
+  <div class="proj-card reveal delay-4"><div class="proj-cat">Poetry &amp; Tarana</div><div class="proj-title">Corporate Tarana</div><div class="proj-desc">Custom company tarana and brand anthem written in Urdu and Punjabi for a corporate client in Lahore.</div><div class="proj-tech"><span class="tech-pill">Urdu</span><span class="tech-pill">Punjabi</span><span class="tech-pill">Brand Voice</span></div></div>
+</div>
+
+<section id="contact" class="section" style="padding-bottom:2.5rem">
+  <div class="sh reveal"><span class="sn">05</span><h2 class="st">Contact</h2><div class="sl"></div></div>
+  <div class="contact-layout">
+    <div class="contact-left reveal delay-1">
+      <div class="contact-intro">Let's build something <span>extraordinary</span> together.</div>
+      <div class="c-item"><div class="c-icon"><i class="ti ti-map-pin"></i></div><div><div class="c-label">Location</div><div class="c-val">Rawalpindi, Pakistan</div></div></div>
+      <div class="c-item"><div class="c-icon"><i class="ti ti-mail"></i></div><div><div class="c-label">Email</div><div class="c-val">uniqueboysaifii@gmail.com</div></div></div>
+      <div class="c-item"><div class="c-icon"><i class="ti ti-brand-whatsapp"></i></div><div><div class="c-label">WhatsApp</div><div class="c-val">+92 325 5852658</div></div></div>
+      <div class="c-item"><div class="c-icon"><i class="ti ti-share"></i></div><div><div class="c-label">Social Media</div><div class="social-row"><div class="soc-item"><i class="ti ti-brand-instagram"></i><span>@saifii-6839</span></div><div class="soc-item"><i class="ti ti-brand-facebook"></i><span>Saif Ali</span></div><div class="soc-item"><i class="ti ti-brand-twitter"></i><span>Saif Ali</span></div><div class="soc-item"><i class="ti ti-brand-threads"></i><span>Saif Ali</span></div></div></div></div>
+      <div class="c-item"><div class="c-icon"><i class="ti ti-clock"></i></div><div><div class="c-label">Response Time</div><div class="c-val">Within 1 hour</div></div></div>
+    </div>
+    <div class="contact-right reveal delay-2">
+      <div class="f-row"><input class="f-input" type="text" placeholder="Your name" /><input class="f-input" type="text" placeholder="Your email" /></div>
+      <input class="f-input" type="text" placeholder="Subject" />
+      <textarea class="f-textarea" placeholder="Tell me about your project..."></textarea>
+      <button class="f-btn" onclick="openLink('https://wa.me/923255852658?text=Hi%20Saif!%20I%20visited%20your%20portfolio%20and%20I%27d%20like%20to%20discuss%20a%20project%20with%20you.')"><i class="ti ti-brand-whatsapp"></i> Send via WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-copy">© 2026 Saif Ali — All rights reserved</div>
+  <div class="footer-brand">S. Ali</div>
+  <div class="footer-socials">
+    <a class="fsoc" href="https://wa.me/923255852658" title="WhatsApp" target="_blank" rel="noreferrer"><i class="ti ti-brand-whatsapp"></i></a>
+    <a class="fsoc" title="Instagram"><i class="ti ti-brand-instagram"></i></a>
+    <a class="fsoc" title="Facebook"><i class="ti ti-brand-facebook"></i></a>
+    <a class="fsoc" title="X / Twitter"><i class="ti ti-brand-twitter"></i></a>
+    <a class="fsoc" title="Threads"><i class="ti ti-brand-threads"></i></a>
+  </div>
+</footer>
+
+<script>
+function openLink(u){window.open(u,'_blank','noopener,noreferrer')}
+function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+
+// Sticky shrink
+const tb=document.getElementById('topbar');
+window.addEventListener('scroll',()=>{tb.classList.toggle('scrolled',window.scrollY>30)},{passive:true});
+
+// Scroll reveal
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Service card spotlight tilt
+document.querySelectorAll('.svc-card').forEach(c=>{
+  c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+});
+</script>
+</body>
+</html>
